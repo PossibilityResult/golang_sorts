@@ -1,5 +1,11 @@
 package Sort
 
+
+func swap(arr []int, i int, j int)  {
+	temp := arr[i]
+	arr[i] = arr[j]
+	arr[j] = temp
+}
 // Bubble Sort is the simplest sorting algorithm.
 // It consists of repeatedly swapping elements if they are not in the same order.
 
@@ -16,7 +22,6 @@ func BubbleSort(arr []int) []int {
 		return arr
 	}
 	var sorted bool = false
-	var temp int
 	cpy := make([]int, len(arr))
 	copy(cpy, arr)
 
@@ -25,9 +30,7 @@ func BubbleSort(arr []int) []int {
 		for i := 0; i < len(arr)-1; i++ {
 			if cpy[i] > cpy[i+1] {
 				sorted = false
-				temp = cpy[i]
-				cpy[i] = cpy[i+1]
-				cpy[i+1] = temp
+				swap(cpy, i, i+1)
 			}
 		}
 	}
@@ -50,7 +53,6 @@ func SelectionSort(arr []int) []int {
 		return arr
 	}
 	var minInd int
-	var temp int
 	cpy := make([]int, len(arr))
 	copy(cpy, arr)
 
@@ -61,9 +63,13 @@ func SelectionSort(arr []int) []int {
 				minInd = j
 			}
 		}
-		temp = cpy[i]
-		cpy[i] = cpy[minInd]
-		cpy[minInd] = temp
+		swap(cpy, i, minInd)
 	}
 	return cpy
 }
+
+
+// Insertion sort splits the array into a sorted and unsorted part
+// Values from the unsorted part are picked and placed in the correct position
+// in the sorted part
+
