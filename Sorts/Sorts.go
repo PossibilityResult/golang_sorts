@@ -73,3 +73,20 @@ func SelectionSort(arr []int) []int {
 // Values from the unsorted part are picked and placed in the correct position
 // in the sorted part
 
+func InsertionSort(arr []int) []int {
+	if len(arr) <= 1 {
+		return arr
+	}
+	cpy := make([]int, len(arr))
+	copy(cpy, arr)
+
+	for i := 0; i < len(cpy); i++ {
+		for j := i; j > 0; j-- {
+			if (cpy[j] < cpy[j-1]) {
+				swap(cpy, j, j-1)
+			}
+		} 
+	}
+
+	return cpy
+}

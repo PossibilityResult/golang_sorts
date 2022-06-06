@@ -16,6 +16,10 @@ func main() {
 	fmt.Printf("Selection Sort: ")
 	fmt.Println(SelectionArr)
 
+	InsertionArr := Sort.InsertionSort(arr)
+	fmt.Printf("Insertion Sort: ")
+	fmt.Println(InsertionArr)
+
 	
 
 	
