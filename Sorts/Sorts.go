@@ -73,6 +73,16 @@ func SelectionSort(arr []int) []int {
 // Values from the unsorted part are picked and placed in the correct position
 // in the sorted part
 
+// Pseudocode
+// consider array [5, 1, 4, 2]
+// 1st pass: [5, 1, 4, 2] -> [5, 1, 4, 2]
+// 2nd pass: [5, 1, 4, 2] -> [1, 5, 4, 2]
+// 3rd pass: [1, 5, 4, 2] -> [1, 4, 5, 2]
+// 4th pass: [1, 4, 5, 2] -> [1, 4, 2, 5] -> [1, 2, 4, 5] 
+
+// Performance
+// Worst Case: Time Complexity = O(n^2), Auxiliary Space = O(1)
+
 func InsertionSort(arr []int) []int {
 	if len(arr) <= 1 {
 		return arr
